@@ -68,7 +68,7 @@ class DictIndex (dict: Array[(String, String)]) {
   def suffixIndex = using(words.map {_.reverse}.sortBy(
     prefixOrder
   )) { arr =>
-    s: String => find(arr)(s).map {
+    s: String => find(arr)(s.reverse).map {
       _.reverse
     }
   }
